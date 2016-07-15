@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Export generator="Cache" version="25">
+<Class name="simple.human">
+<Super>%Persistent,%Populate</Super>
+<TimeCreated>64110,44755.141038</TimeCreated>
+
+<Property name="Name">
+<Type>%String</Type>
+<Required>1</Required>
+</Property>
+
+<Property name="PhoneNum">
+<Type>%String</Type>
+</Property>
+
+<Property name="State">
+<Type>%String</Type>
+</Property>
+
+<Parameter name="SPECIES">
+<Default>Homo sapens !!!</Default>
+</Parameter>
+
+<Method name="Print">
+<FormalSpec>state:%String="MA"</FormalSpec>
+<Implementation><![CDATA[
+	write !, ..Name, "lives in", ..State, " and is "
+	if (..State = state) {
+		write "a ", ..#SPECIES, "."
+	}
+	else {
+		write "an extra-terrestrial."
+	}
+	write "Phone is: ", ..PhoneNum, "."
+]]></Implementation>
+</Method>
+
+<Storage name="Default">
+<Type>%Library.CacheStorage</Type>
+<DataLocation>^simple.humanD</DataLocation>
+<DefaultData>humanDefaultData</DefaultData>
+<IdLocation>^simple.humanD</IdLocation>
+<IndexLocation>^simple.humanI</IndexLocation>
+<StreamLocation>^simple.humanS</StreamLocation>
+<Data name="humanDefaultData">
+<Value name="1">
+<Value>%%CLASSNAME</Value>
+</Value>
+<Value name="2">
+<Value>Name</Value>
+</Value>
+<Value name="3">
+<Value>PhonaNum</Value>
+</Value>
+<Value name="4">
+<Value>State</Value>
+</Value>
+<Value name="5">
+<Value>PhoneNum</Value>
+</Value>
+</Data>
+</Storage>
+</Class>
+</Export>
